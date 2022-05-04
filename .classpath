@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/commons-math3-3.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/jcommon-1.0.20.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/jfreechart-1.0.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/JMetal-4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/rsyntaxtextarea.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/MOEAFramework-2.13/lib/MOEAFramework-2.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/lib/lib/jFuzzyLogic.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
