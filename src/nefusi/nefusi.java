@@ -51,7 +51,7 @@ public static class nefu extends AbstractProblem {
 			
 	        try {
 	            data_training = new ArrayList<Double[]>();
-	            final FileInputStream stream = new FileInputStream("training.txt");
+	            final FileInputStream stream = new FileInputStream("datasets/mc-training.txt");
 	            @SuppressWarnings("resource")
 				final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 	            String data = "";
@@ -91,7 +91,7 @@ public static class nefu extends AbstractProblem {
 	        
 	        try {
 	            data_test = new ArrayList<Double[]>();
-	            final FileInputStream stream = new FileInputStream("geresid.txt");
+	            final FileInputStream stream = new FileInputStream("datasets/mc-validation.txt");
 	            @SuppressWarnings("resource")
 				final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 	            String data = "";
