@@ -376,17 +376,7 @@ public static class nefu extends AbstractProblem {
 	        }
 
 	        
-	    	PrintWriter pw = null;
-			try {
-				pw = new PrintWriter(new FileWriter("out.txt"));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	 
-	    		pw.write((int) getPearson(source_test, target_test));
-	     
-	    	pw.close();
+	        System.out.println (getPearson(source_test, target_test));
 			
 		}
 		
