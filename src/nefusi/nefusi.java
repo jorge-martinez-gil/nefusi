@@ -17,6 +17,7 @@ import java.util.Arrays;
 
 import org.moeaframework.Executor;
 import org.moeaframework.core.NondominatedPopulation;
+import org.moeaframework.core.Population;
 import org.moeaframework.core.Solution;
 import org.moeaframework.core.variable.EncodingUtils;
 import org.moeaframework.core.variable.RealVariable;
@@ -51,7 +52,7 @@ public static class nefu extends AbstractProblem {
 			
 	        try {
 	            data_training = new ArrayList<Double[]>();
-	            final FileInputStream stream = new FileInputStream("datasets/mc-training");
+	            final FileInputStream stream = new FileInputStream("datasets/mc-training.txt");
 	            @SuppressWarnings("resource")
 				final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 	            String data = "";
@@ -91,7 +92,7 @@ public static class nefu extends AbstractProblem {
 	        
 	        try {
 	            data_test = new ArrayList<Double[]>();
-	            final FileInputStream stream = new FileInputStream("datasets/mc-validation");
+	            final FileInputStream stream = new FileInputStream("datasets/geresid-validation.txt");
 	            @SuppressWarnings("resource")
 				final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 	            String data = "";
@@ -110,7 +111,7 @@ public static class nefu extends AbstractProblem {
 	                            final double e = Double.parseDouble(line[4]);
 	                            final Double [] f = { a, b, c, d, e };
 	                            data_test.add(f);
-	                            System.out.println(a);
+	                            //System.out.println(a);
 	                        } catch(final NumberFormatException e) {
 	                            System.out.println(e);
 	                        }
@@ -122,7 +123,7 @@ public static class nefu extends AbstractProblem {
 	            source_test = new double [data_test.size()];
 	            
 		        for (int i = 0; i < data_test.size(); i++)
-		        	source_test[i] = Double.valueOf(data_test.get(i)[1]);
+		        	source_test[i] = Double.valueOf(data_test.get(i)[0]);
 	            
 	        } catch(Exception e) {
 	            e.printStackTrace();
@@ -346,6 +347,49 @@ public static class nefu extends AbstractProblem {
 		    }
 		}
 		
+		/**
+		 * Calculates Validation
+		 */
+		public static void printValidation () {
+			   	
+			FIS fis = new FIS ();
+	        try {
+	        	fis = FIS.load("fcl/temp", true);
+			} catch (Exception e) {
+				return;
+			}
+			
+	       
+	        target_test = new double [data_test.size()];
+	        for (int i = 0; i < data_test.size(); i++) {
+	        	fis.setVariable("alga", data_test.get(i)[1]);
+	        	fis.setVariable("algb", data_test.get(i)[2]);
+	        	fis.setVariable("algc", data_test.get(i)[3]);
+	        	fis.setVariable("algd", data_test.get(i)[4]);
+	        
+	        	// Evaluate
+	        	fis.evaluate();
+
+	        	// Training output 
+	        	target_test[i] = fis.getVariable("score").defuzzify();
+	        
+	        }
+
+	        
+	    	PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new FileWriter("out.txt"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	 
+	    		pw.write((int) getPearson(source_test, target_test));
+	     
+	    	pw.close();
+			
+		}
+		
 
 		/**
 		 * Constructs a new solution and defines the bounds of the decision
@@ -372,7 +416,6 @@ public static class nefu extends AbstractProblem {
 		public void evaluate(Solution solution) {
 			double[] x = EncodingUtils.getReal(solution);
 			double[] f = new double[numberOfObjectives];
-
 			
 			i++;
 			
@@ -444,7 +487,7 @@ public static class nefu extends AbstractProblem {
 
 	        f[0] = -getPearson(source_training, target_training);
 	        
-	       /* target_test = new double [data_test.size()];
+	        target_test = new double [data_test.size()];
 	        for (int i = 0; i < data_test .size(); i++) {
 	        	
 	        	fis.setVariable("alga", data_test.get(i)[1]);
@@ -460,10 +503,9 @@ public static class nefu extends AbstractProblem {
 	        
 	        }
 
-	        f[1] = -getPearson(source_test, target_test);*/
+	        f[1] = -getPearson(source_test, target_test);
 	        
-	        
-	        // Rules
+	        // Rules -uncomment when it is necessary to know the number of rules
 	        /*int acum = 0;
 	        for (int i = 0; i < 54; i=i+3) {
 	        	int num = (int) x[i];
@@ -471,14 +513,18 @@ public static class nefu extends AbstractProblem {
 	        		acum++;
 	        }
 	        
-	        f[1] = 18-acum;*/
+	        f[2] = 18-acum;*/
 	        
 	        solution.setObjectives(f);
 	        
+	        
 		}
 		
+		
+		
 	}
-	
+
+
 	//main
 	public static void main(String[] args) {
 		//configure and run the main function
@@ -488,7 +534,7 @@ public static class nefu extends AbstractProblem {
 		NondominatedPopulation result = new Executor()
 				.withProblemClass(nefu.class)
 				.withAlgorithm("DE")
-				.withMaxEvaluations(15000)
+				.withMaxEvaluations(10000)
 				.run();
 		 
 		long endTime = System.nanoTime();
@@ -496,14 +542,14 @@ public static class nefu extends AbstractProblem {
         System.out.println("Execution time in milliseconds : " +
                 timeElapsed / 1000000);
 
-		System.out.format("Score	Rules%n");
+		System.out.format("Training	Test \n");
 		
 		for (Solution solution : result) {
-			System.out.format("%.4f %.4f%n",
+			System.out.format("%.4f		%.4f \n",
 					-1 * solution.getObjective(0),
-					solution.getObjective(0));
+					-1 * solution.getObjective(1));
 		}
-	
+			
 		
 	}
 	
