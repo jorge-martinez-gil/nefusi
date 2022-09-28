@@ -3,6 +3,8 @@
  
  Please note that this is an intermediate version of the code.
  
+ It is recommended to import the project with an IDE such as Eclipse. When this is not possible, you can proceed manually as follows:
+ 
  ## Compilation
  ``` ...\nefusi\src>javac -cp combined.jar nefusi/*.java```
  
