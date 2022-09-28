@@ -24,8 +24,8 @@
  (Please be aware that the running the software under current configuration takes more than 5 minutes (11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz   1.80 GHz))
  
   ## Related papers
- Jorge Martinez-Gil, Riad Mokadem, Josef Küng, Abdelkader Hameurlain: A Novel Neurofuzzy Approach for Semantic Similarity Measurement. DaWaK 2021: 192-203
- Jorge Martinez-Gil, Jose Manuel Chaves-Gonzalez: Sustainable Semantic Similarity Asssessment. Journal of Intelligent and Fuzzy Systems, vol. 43, no. 5, pp. 6163-6174, 2022
+ - Jorge Martinez-Gil, Riad Mokadem, Josef Küng, Abdelkader Hameurlain: A Novel Neurofuzzy Approach for Semantic Similarity Measurement. DaWaK 2021: 192-203
+ - Jorge Martinez-Gil, Jose Manuel Chaves-Gonzalez: Sustainable Semantic Similarity Asssessment. Journal of Intelligent and Fuzzy Systems, vol. 43, no. 5, pp. 6163-6174, 2022
  
  ## License
  MIT

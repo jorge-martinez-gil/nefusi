@@ -21,7 +21,7 @@
  What means that the neurofuzzy model completed the training phase with 86.11% accuracy, and the test phase with 68.05%.
  Please note that, for example, for this GeReSiD dataset, 68.05% accuracy is closed to state-of-the-art.
  
- (Please be aware that the running the software under current configuration takes more than 5 minutes (Intel i7))
+ (Please be aware that the running the software under current configuration takes more than 5 minutes (11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz   1.80 GHz))
  
   ## Related papers
  Jorge Martinez-Gil, Riad Mokadem, Josef Küng, Abdelkader Hameurlain: A Novel Neurofuzzy Approach for Semantic Similarity Measurement. DaWaK 2021: 192-203
