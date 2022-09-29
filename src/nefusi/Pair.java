@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Jorge Martinez Gil <jorgemarcc@gmail.com>
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 package nefusi;
 import java.util.Comparator;
 
