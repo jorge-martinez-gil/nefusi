@@ -1,8 +1,6 @@
-/*
- * SPDX-FileCopyrightText: 2022 Jorge Martinez Gil <jorgemarcc@gmail.com>
- *
- * SPDX-License-Identifier: MIT
- */
+// SPDX-FileCopyrightText: 2022 Jorge Martinez Gil
+//
+// SPDX-License-Identifier: MIT
 
 package nefusi;
 
