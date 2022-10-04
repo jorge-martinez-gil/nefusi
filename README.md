@@ -27,5 +27,8 @@
  - Jorge Martinez-Gil, Riad Mokadem, Josef Küng, Abdelkader Hameurlain: A Novel Neurofuzzy Approach for Semantic Similarity Measurement. DaWaK 2021: 192-203
  - Jorge Martinez-Gil, Jose Manuel Chaves-Gonzalez: Sustainable Semantic Similarity Asssessment. J. Intell. Fuzzy Syst. 43(5): 6163-6174 (2022)
  
- ## License
- MIT
+  ## Funding
+  The development of NEFUSI is funded in the project NGI Zero Discovery by the NLnet Foundation and the European Commission. Project number: 2021-04-069
+ 
+  ## License
+  MIT
