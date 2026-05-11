@@ -1,0 +1,7 @@
+services:
+  nefusi:
+    build: .
+    volumes:
+      - ./src/datasets:/app/datasets
+      - ./src/fcl:/app/fcl
+    restart: "no"
