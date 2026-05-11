@@ -1,0 +1,26 @@
+# Maven build output
+target/
+
+# Compiled class files
+*.class
+
+# JAR files (binaries) — keep src/combined.jar as legacy fallback
+*.jar
+!src/combined.jar
+!bin/combined.jar
+
+# Eclipse IDE
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Eclipse binary output directory (class files only; data files kept via bin/.gitignore)
+bin/*.class

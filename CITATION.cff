@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use NEFUSI, please cite the following works."
+title: NEFUSI
+authors:
+  - family-names: Martinez-Gil
+    given-names: Jorge
+    orcid: "https://orcid.org/0000-0002-8993-5885"
+version: 1.0.0
+date-released: "2022-05-04"
+license: MIT
+repository-code: "https://github.com/jorge-martinez-gil/nefusi"
+keywords:
+  - fuzzy-logic
+  - neuro-fuzzy
+  - semantic-similarity
+  - java
+  - evolutionary-optimization
+references:
+  - type: conference-paper
+    title: "A Novel Neurofuzzy Approach for Semantic Similarity Measurement"
+    authors:
+      - family-names: Martinez-Gil
+        given-names: Jorge
+      - family-names: Mokadem
+        given-names: Riad
+      - family-names: Küng
+        given-names: Josef
+      - family-names: Hameurlain
+        given-names: Abdelkader
+    conference:
+      name: "DaWaK 2021"
+    year: 2021
+    pages: "192-203"
+  - type: article
+    title: "Sustainable Semantic Similarity Assessment"
+    authors:
+      - family-names: Martinez-Gil
+        given-names: Jorge
+      - family-names: Chaves-Gonzalez
+        given-names: Jose Manuel
+    journal: "Journal of Intelligent & Fuzzy Systems"
+    volume: 43
+    issue: 5
+    year: 2022
+    pages: "6163-6174"
